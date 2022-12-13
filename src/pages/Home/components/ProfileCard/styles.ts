@@ -22,6 +22,7 @@ export const ProfileCardDetails = styled.div`
   header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     h2 {
       color: ${(props) => props.theme['base-title']};

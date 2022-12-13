@@ -6,6 +6,10 @@ export const ExtenalLinkContainer = styled.div`
   gap: 0.5rem;
   cursor: pointer;
 
+  &:hover {
+    border-bottom: 1px solid ${(props) => props.theme.blue};
+  }
+
   p {
     font-size: 0.75rem;
     text-transform: uppercase;

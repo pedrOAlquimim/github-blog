@@ -1,6 +1,7 @@
 import { Header } from '../../components/Header'
 import { ProfileCard } from './components/ProfileCard'
-import { HomeContainer } from './styles'
+import { SearchForm } from './components/SearchForm'
+import { HomeContainer, SearchContainer } from './styles'
 
 export function Home() {
   return (
@@ -9,6 +10,15 @@ export function Home() {
 
       <HomeContainer>
         <ProfileCard />
+
+        <SearchContainer>
+          <div>
+            <p>Publicações</p>
+            <span>6 publicações</span>
+          </div>
+
+          <SearchForm />
+        </SearchContainer>
       </HomeContainer>
     </div>
   )

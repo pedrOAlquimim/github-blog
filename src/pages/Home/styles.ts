@@ -5,3 +5,26 @@ export const HomeContainer = styled.main`
   width: 100%;
   margin: 0 auto;
 `
+
+export const SearchContainer = styled.div`
+  margin-top: 4.5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: 1.125rem;
+      color: ${(props) => props.theme['base-subtitle']};
+    }
+
+    span {
+      font-size: 0.875rem;
+      color: ${(props) => props.theme['base-span']};
+    }
+  }
+`
