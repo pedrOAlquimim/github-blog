@@ -1,7 +1,8 @@
 import { Header } from '../../components/Header'
+import { Post } from './components/Post'
 import { ProfileCard } from './components/ProfileCard'
 import { SearchForm } from './components/SearchForm'
-import { HomeContainer, SearchContainer } from './styles'
+import { HomeContainer, PostConatainer, SearchContainer } from './styles'
 
 export function Home() {
   return (
@@ -19,6 +20,15 @@ export function Home() {
 
           <SearchForm />
         </SearchContainer>
+
+        <PostConatainer>
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+        </PostConatainer>
       </HomeContainer>
     </div>
   )

@@ -28,3 +28,10 @@ export const SearchContainer = styled.div`
     }
   }
 `
+
+export const PostConatainer = styled.div`
+  margin-bottom: 14.625rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+`
