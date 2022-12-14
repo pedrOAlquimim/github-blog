@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PostContainer = styled.div`
   width: 100%;
@@ -6,7 +6,12 @@ export const PostContainer = styled.div`
   max-height: 16.5rem;
   padding: 2rem;
   border-radius: 10px;
-  background: ${props => props.theme["base-post"]};
+  cursor: pointer;
+  background: ${(props) => props.theme['base-post']};
+
+  &:hover {
+    outline: 2px solid ${(props) => props.theme['base-label']};
+  }
 
   header {
     display: flex;
@@ -17,13 +22,13 @@ export const PostContainer = styled.div`
     h3 {
       flex: 1;
       font-size: 1.25rem;
-      color: ${props => props.theme["base-title"]};
+      color: ${(props) => props.theme['base-title']};
       text-overflow: ellipsis;
     }
-    
+
     span {
       font-size: 0.875rem;
-      color: ${props => props.theme["base-span"]};
+      color: ${(props) => props.theme['base-span']};
     }
   }
 
