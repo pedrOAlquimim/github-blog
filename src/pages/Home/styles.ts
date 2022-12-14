@@ -1,11 +1,5 @@
 import styled from 'styled-components'
 
-export const HomeContainer = styled.main`
-  max-width: 864px;
-  width: 100%;
-  margin: 0 auto;
-`
-
 export const SearchContainer = styled.div`
   margin-top: 4.5rem;
   margin-bottom: 3rem;

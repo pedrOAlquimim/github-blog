@@ -8,6 +8,7 @@ export const ExtenalLinkContainer = styled.div`
 
   &:hover {
     border-bottom: 1px solid ${(props) => props.theme.blue};
+    margin-bottom: -1px;
   }
 
   p {

@@ -1,6 +1,4 @@
 import { ExternalLink } from '../../../../components/ExternalLink'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { IconInfo } from '../../../../components/IconInfo'
 import { ProfileCardContainer, ProfileCardDetails } from './styles'
 
@@ -15,10 +13,7 @@ export function ProfileCard() {
       <ProfileCardDetails>
         <header>
           <h2>Lorem Ipsum</h2>
-          <ExternalLink
-            text={<p>Github</p>}
-            icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} />}
-          />
+          <ExternalLink text={<p>Github</p>} />
         </header>
 
         <p>

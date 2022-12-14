@@ -1,11 +1,11 @@
 import { Post } from './components/Post'
 import { ProfileCard } from './components/ProfileCard'
 import { SearchForm } from './components/SearchForm'
-import { HomeContainer, PostConatainer, SearchContainer } from './styles'
+import { PostConatainer, SearchContainer } from './styles'
 
 export function Home() {
   return (
-    <HomeContainer>
+    <div>
       <ProfileCard />
 
       <SearchContainer>
@@ -25,6 +25,6 @@ export function Home() {
         <Post />
         <Post />
       </PostConatainer>
-    </HomeContainer>
+    </div>
   )
 }
