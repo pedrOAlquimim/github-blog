@@ -23,7 +23,7 @@ interface BlogProviderProps {
 
 export const PostContext = createContext({} as PostContextProps)
 
-export function BlogProvider({ children }: BlogProviderProps) {
+export function PostProvider({ children }: BlogProviderProps) {
   const [posts, setPosts] = useState<PostProps[]>([])
 
   async function fetchPosts() {
