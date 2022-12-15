@@ -1,14 +1,16 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { ReactNode } from 'react'
 import { InfoIconContainer } from './styles'
 
-export function IconInfo() {
+interface InfoIconProps {
+  icon: ReactNode
+  text: ReactNode
+}
+
+export function IconInfo({ text, icon }: InfoIconProps) {
   return (
     <InfoIconContainer>
-      <span>
-        <FontAwesomeIcon icon={faGithub} />
-      </span>
-      <p>Rocketseat</p>
+      <span>{icon}</span>
+      <p>{text}</p>
     </InfoIconContainer>
   )
 }

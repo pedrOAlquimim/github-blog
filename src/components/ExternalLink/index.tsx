@@ -5,15 +5,18 @@ import { ExtenalLinkContainer } from './styles'
 
 interface ExternalLinkProps {
   text: ReactNode
+  link: string
 }
 
-export function ExternalLink({ text }: ExternalLinkProps) {
+export function ExternalLink({ text, link }: ExternalLinkProps) {
   return (
     <ExtenalLinkContainer>
-      <p>{text}</p>
-      <span>
-        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-      </span>
+      <a href={link} target="_blank" rel="noreferrer">
+        {text}
+        <span>
+          <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+        </span>
+      </a>
     </ExtenalLinkContainer>
   )
 }

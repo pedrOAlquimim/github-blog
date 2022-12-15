@@ -11,14 +11,18 @@ export const ExtenalLinkContainer = styled.div`
     margin-bottom: -1px;
   }
 
-  p {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: ${(props) => props.theme.blue};
-  }
+  a {
+    text-decoration: none;
 
-  span {
-    font-size: 0.75rem;
-    color: ${(props) => props.theme.blue};
+    p {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: ${(props) => props.theme.blue};
+    }
+
+    span {
+      font-size: 0.75rem;
+      color: ${(props) => props.theme.blue};
+    }
   }
 `
