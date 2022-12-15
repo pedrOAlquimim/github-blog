@@ -1,9 +1,13 @@
+import { useContext } from 'react'
+import { PostContext } from '../../contexts/PostContext'
 import { Post } from './components/Post'
 import { ProfileCard } from './components/ProfileCard'
 import { SearchForm } from './components/SearchForm'
 import { PostConatainer, SearchContainer } from './styles'
 
 export function Home() {
+  const { posts } = useContext(PostContext)
+
   return (
     <div>
       <ProfileCard />
@@ -18,12 +22,9 @@ export function Home() {
       </SearchContainer>
 
       <PostConatainer>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        {posts.map((post) => {
+          return <Post key={post.number} post={post} />
+        })}
       </PostConatainer>
     </div>
   )

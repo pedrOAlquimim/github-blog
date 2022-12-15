@@ -7,8 +7,6 @@ import { IconInfo } from '../../../../components/IconInfo'
 import { api } from '../../../../lib/axios'
 import { ProfileCardContainer, ProfileCardDetails } from './styles'
 
-const username = import.meta.env.VITE_GITHUB_USERNAME
-
 interface ProfileDataProps {
   login: string
   name: string
@@ -25,7 +23,7 @@ export function ProfileCard() {
   )
 
   async function fetchProfile() {
-    const response = await api.get(`users/${username}`)
+    const response = await api.get('users/pedrOAlquimim')
 
     setProfileData(response.data)
   }
