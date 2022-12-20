@@ -30,6 +30,10 @@ export const PostContainer = styled.div`
       font-size: 0.875rem;
       color: ${(props) => props.theme['base-span']};
     }
+
+    span:first-letter {
+      text-transform: capitalize;
+    }
   }
 
   p {
