@@ -14,9 +14,13 @@ export const PostContainer = styled.div`
   }
 
   a {
+    text-decoration: none;
+
     &:visited {
       text-decoration: none;
+      color: ${(props) => props.theme['base-text']};
     }
+
     header {
       display: flex;
       justify-content: space-between;
