@@ -9,8 +9,8 @@ import {
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { PostInfoContainer } from './styles'
 import { NavLink } from 'react-router-dom'
-import { PostProps } from '../../../../contexts/PostContext'
 import { FormatDistanceDate } from '../../../../utils/formatter'
+import { PostProps } from '../../../Home'
 
 interface PostInfoProps {
   post: PostProps

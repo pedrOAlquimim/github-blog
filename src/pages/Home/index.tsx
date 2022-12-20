@@ -1,12 +1,36 @@
-import { useContext } from 'react'
-import { PostContext } from '../../contexts/PostContext'
+import { useEffect, useState } from 'react'
+import { api } from '../../lib/axios'
 import { Post } from './components/Post'
 import { ProfileCard } from './components/ProfileCard'
 import { SearchForm } from './components/SearchForm'
 import { PostConatainer, SearchContainer } from './styles'
 
+export interface PostProps {
+  number: number
+  title: string
+  body: string
+  comments: number
+  updated_at: string
+  html_url: string
+  user: {
+    login: string
+  }
+}
+
 export function Home() {
-  const { posts } = useContext(PostContext)
+  const [posts, setPosts] = useState<PostProps[]>([])
+
+  const postsQuantity = posts.length
+
+  async function fetchPosts() {
+    const response = await api.get('/repos/pedrOAlquimim/github-blog/issues')
+
+    setPosts(response.data)
+  }
+
+  useEffect(() => {
+    fetchPosts()
+  }, [])
 
   return (
     <div>
@@ -15,7 +39,7 @@ export function Home() {
       <SearchContainer>
         <div>
           <p>Publicações</p>
-          <span>6 publicações</span>
+          <span>{postsQuantity} publicações</span>
         </div>
 
         <SearchForm />

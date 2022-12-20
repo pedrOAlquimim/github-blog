@@ -1,21 +1,38 @@
-import { useContext } from 'react'
-import { PostContext } from '../../contexts/PostContext'
 import { PostInfo } from './components/PostInfo'
+import ReactMarkdown from 'react-markdown'
 import { PostContent, PostHeader } from './styles'
+import { api } from '../../lib/axios'
+import { useCallback, useEffect, useState } from 'react'
+import { PostProps } from '../Home'
+import { useParams } from 'react-router-dom'
 
 export function Post() {
-  const { posts } = useContext(PostContext)
+  const { issuesNumber } = useParams()
+
+  const [postsData, setPostsData] = useState<PostProps>({} as PostProps)
+
+  const fetchPostsNumber = useCallback(async () => {
+    const response = await api.get(
+      `/repos/pedrOAlquimim/github-blog/issues/${issuesNumber}`,
+    )
+
+    setPostsData(response.data)
+  }, [issuesNumber])
+
+  useEffect(() => {
+    fetchPostsNumber()
+  }, [fetchPostsNumber])
 
   return (
     <div>
       <PostHeader>
-        {posts.map((post) => {
-          return <PostInfo key={post.number} post={post} />
-        })}
+        <PostInfo key={postsData.number} post={postsData} />
       </PostHeader>
 
       <div>
-        <PostContent></PostContent>
+        <PostContent>
+          <ReactMarkdown>{postsData.body}</ReactMarkdown>
+        </PostContent>
       </div>
     </div>
   )

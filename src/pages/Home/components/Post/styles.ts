@@ -13,34 +13,39 @@ export const PostContainer = styled.div`
     outline: 2px solid ${(props) => props.theme['base-label']};
   }
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
+  a {
+    &:visited {
+      text-decoration: none;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
 
-    h3 {
-      flex: 1;
-      font-size: 1.25rem;
-      color: ${(props) => props.theme['base-title']};
+      h3 {
+        flex: 1;
+        font-size: 1.25rem;
+        color: ${(props) => props.theme['base-title']};
+        text-overflow: ellipsis;
+      }
+
+      span {
+        font-size: 0.875rem;
+        color: ${(props) => props.theme['base-span']};
+      }
+
+      span:first-letter {
+        text-transform: capitalize;
+      }
+    }
+
+    p {
+      overflow: hidden;
       text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
     }
-
-    span {
-      font-size: 0.875rem;
-      color: ${(props) => props.theme['base-span']};
-    }
-
-    span:first-letter {
-      text-transform: capitalize;
-    }
-  }
-
-  p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
   }
 `
