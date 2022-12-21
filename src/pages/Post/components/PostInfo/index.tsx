@@ -9,7 +9,7 @@ import {
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { PostInfoContainer } from './styles'
 import { NavLink } from 'react-router-dom'
-import { relativeDateFormatter } from '../../../../utils/formatter'
+import { formatDistanceDate } from '../../../../utils/formatter'
 import { PostProps } from '../../../Home'
 
 interface PostInfoProps {
@@ -17,7 +17,7 @@ interface PostInfoProps {
 }
 
 export function PostInfo({ post }: PostInfoProps) {
-  const formattedDate = relativeDateFormatter(post.updated_at)
+  const formattedDate = formatDistanceDate(post.updated_at)
 
   return (
     <PostInfoContainer>
