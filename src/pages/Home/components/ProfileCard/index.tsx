@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faBuilding, faUserGroup } from '@fortawesome/free-solid-svg-icons'
@@ -22,15 +22,15 @@ export function ProfileCard() {
     {} as ProfileDataProps,
   )
 
-  async function fetchProfile() {
+  const fetchProfile = useCallback(async () => {
     const response = await api.get('users/pedrOAlquimim')
 
     setProfileData(response.data)
-  }
+  }, [])
 
   useEffect(() => {
     fetchProfile()
-  }, [])
+  }, [fetchProfile])
 
   return (
     <ProfileCardContainer>

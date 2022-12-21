@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { api } from '../../lib/axios'
 import { Post } from './components/Post'
 import { ProfileCard } from './components/ProfileCard'
@@ -22,15 +22,15 @@ export function Home() {
 
   const postsQuantity = posts.length
 
-  async function fetchPosts() {
+  const fetchPosts = useCallback(async () => {
     const response = await api.get('/repos/pedrOAlquimim/github-blog/issues')
 
     setPosts(response.data)
-  }
+  }, [])
 
   useEffect(() => {
     fetchPosts()
-  }, [])
+  }, [fetchPosts])
 
   return (
     <div>
