@@ -7,17 +7,17 @@ import { PostProps } from '../Home'
 import { useParams } from 'react-router-dom'
 
 export function Post() {
-  const { issuesNumber } = useParams()
+  const { id } = useParams()
 
   const [postsData, setPostsData] = useState<PostProps>({} as PostProps)
 
   const fetchPostsNumber = useCallback(async () => {
     const response = await api.get(
-      `/repos/pedrOAlquimim/github-blog/issues/${issuesNumber}`,
+      `/repos/pedrOAlquimim/github-blog/issues/${id}`,
     )
 
     setPostsData(response.data)
-  }, [issuesNumber])
+  }, [id])
 
   useEffect(() => {
     fetchPostsNumber()
