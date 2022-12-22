@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import { PostProps } from '../Home'
 import { useParams } from 'react-router-dom'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { duotoneSea } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export function Post() {
   const { id } = useParams()
@@ -44,7 +44,7 @@ export function Post() {
                 return !inline && match ? (
                   <SyntaxHighlighter
                     children={String(children).replace(/\n$/, '')}
-                    style={duotoneSea as any}
+                    style={dracula as any}
                     language={match[1]}
                     PreTag="div"
                     {...props}

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { api } from '../../lib/axios'
 import { Post } from './components/Post'
 import { ProfileCard } from './components/ProfileCard'
@@ -22,15 +22,17 @@ export function Home() {
 
   const postsQuantity = posts.length
 
-  const fetchPosts = useCallback(async () => {
-    const response = await api.get('/repos/pedrOAlquimim/github-blog/issues')
+  async function fetchPosts(query: string = '') {
+    const response = await api.get(
+      `/search/issues?q=${query}%20repo:pedrOAlquimim/github-blog`,
+    )
 
-    setPosts(response.data)
-  }, [])
+    setPosts(response.data.items)
+  }
 
   useEffect(() => {
     fetchPosts()
-  }, [fetchPosts])
+  }, [])
 
   return (
     <div>
@@ -42,7 +44,7 @@ export function Home() {
           <span>{postsQuantity} publicações</span>
         </div>
 
-        <SearchForm />
+        <SearchForm fetchPosts={fetchPosts} />
       </SearchContainer>
 
       <PostConatainer>
