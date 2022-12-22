@@ -1,17 +1,5 @@
-import { formatDistanceToNow } from 'date-fns'
-import br from 'date-fns/locale/pt-BR'
+import moment from 'moment'
 
 export function formatDistanceDate(date: string) {
-  const result = formatDistanceToNow(new Date(date), {
-    addSuffix: true,
-    locale: br,
-  })
-
-  return result
+  return moment(date).fromNow()
 }
-
-// import moment from 'moment'
-
-// export function relativeDateFormatter(date: string) {
-//   return moment(date).fromNow()
-// }

@@ -37,7 +37,7 @@ export function PostInfo({ post }: PostInfoProps) {
       <div>
         <IconInfo
           icon={<FontAwesomeIcon icon={faGithub} />}
-          // text={post.user.login}
+          text={post.user?.login}
         />
         <IconInfo
           icon={<FontAwesomeIcon icon={faCalendarDay} />}
