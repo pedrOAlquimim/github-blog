@@ -26,6 +26,12 @@ export const PostContainer = styled(Link)`
     gap: 1rem;
     margin-bottom: 1.25rem;
 
+    @media (max-width: 480px) {
+      span {
+        display: none;
+      }
+    }
+
     h3 {
       flex: 1;
       font-size: 1.25rem;

@@ -16,6 +16,12 @@ export const ProfileCardContainer = styled.div`
     object-fit: cover;
     border-radius: 8px;
   }
+
+  @media (max-width: 768px) {
+    img {
+      display: none;
+    }
+  }
 `
 
 export const ProfileCardDetails = styled.div`
@@ -37,5 +43,12 @@ export const ProfileCardDetails = styled.div`
   > div {
     display: flex;
     gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    > div {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
   }
 `

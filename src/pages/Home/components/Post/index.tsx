@@ -1,5 +1,5 @@
 import { PostContainer } from './styles'
-// import { FormatDistanceDate } from '../../../../utils/formatter'
+import { formatDistanceDate } from '../../../../utils/formatter'
 import { PostProps } from '../..'
 
 interface PostCompProps {
@@ -7,13 +7,13 @@ interface PostCompProps {
 }
 
 export function Post({ post }: PostCompProps) {
-  // const formattedDate = FormatDistanceDate(post.updated_at)
+  const formattedDate = formatDistanceDate(post.updated_at)
 
   return (
     <PostContainer to={`/post/${post.number}`}>
       <header>
         <h3>{post.title}</h3>
-        {/* <span>{formattedDate}</span> */}
+        <span>{formattedDate}</span>
       </header>
 
       <p>{post.body}</p>
