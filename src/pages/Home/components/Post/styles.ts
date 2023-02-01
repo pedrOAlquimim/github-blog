@@ -50,6 +50,7 @@ export const PostContainer = styled(Link)`
   }
 
   p {
+    text-decoration: none;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
